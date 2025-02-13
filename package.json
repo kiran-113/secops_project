@@ -12,7 +12,8 @@
   "devDependencies": {
     "@types/node": "^22.13.1",
     "nodemon": "^3.0.1",
-    "sonarqube-scanner": "^4.2.6"
+    "sonarqube-scanner": "^4.2.6",
+    "typescript": "^5.7.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
