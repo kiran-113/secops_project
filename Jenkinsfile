@@ -4,7 +4,7 @@ pipeline {
     environment {
         SONAR_HOST_URL = 'http://localhost:9090'
         SONAR_PROJECT_KEY = 'secops_project'
-        SCANNER_HOME=tool 'sonar-scanner'
+        SCANNER_HOME = tool 'SonarQubeScanner'  // Ensure this matches the tool name in Jenkins
     }
 
     stages {
@@ -16,12 +16,12 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('sonar-server') {  // Match Jenkins config name
+                withSonarQubeEnv('sonar-server') {  // Ensure this matches your SonarQube server name in Jenkins
                     sh '''
-                    $SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectKey=secops-project \
+                    ${SCANNER_HOME}/bin/sonar-scanner \
+                        -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
                         -Dsonar.sources=. \
-                        -Dsonar.host.url=http://localhost:9090 \
+                        -Dsonar.host.url=${SONAR_HOST_URL} \
                         -Dsonar.login=sqp_d88ed0ea48b13814ab08be8c1dc55d73bc326602
                     '''
                 }
