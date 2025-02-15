@@ -18,10 +18,10 @@ pipeline {
                 withSonarQubeEnv('sonar-server') {  // Match Jenkins config name
                     sh '''
                     sonar-scanner \
-                      -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
-                      -Dsonar.sources=. \
-                      -Dsonar.language=js \
-                      -Dsonar.exclusions="node_modules/**, client/**, **/*.test.js"
+                        -Dsonar.projectKey=secops-project \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=http://localhost:9090 \
+                        -Dsonar.login=sqp_d88ed0ea48b13814ab08be8c1dc55d73bc326602
                     '''
                 }
             }
