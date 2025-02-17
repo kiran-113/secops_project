@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SONAR_HOST_URL = 'http://35.160.85.156:9000/' //'#http://localhost:9090'
+        SONAR_HOST_URL = 'http://34.221.129.225:9000//' //'#http://localhost:9090'
         SONAR_PROJECT_KEY = 'secops_project'
         SCANNER_HOME = tool 'SonarQubeScanner'  // Ensure this matches the tool name in Jenkins
     }
@@ -22,7 +22,7 @@ pipeline {
                         -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=${SONAR_HOST_URL} \
-                        -Dsonar.login=sqp_db237a2e1ac50e1a37903c5a4d44a7f6fae51168
+                        -Dsonar.login=sqp_a79b931fa036ffd6e456087c6411b0fb2e6348a1
                     '''
                 }
             }
