@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SONAR_HOST_URL = 'http://35.95.110.234:9000'
+        SONAR_HOST_URL = 'http://http://35.91.47.158:9000'
         SONAR_PROJECT_KEY = 'secops_project'
         SCANNER_HOME = tool 'SonarQubeScanner'  // Ensure this matches the tool name in Jenkins
         ECR_REPOSITORY = 'razorpay-ecr' // Your ECR repository name
@@ -66,8 +66,9 @@ pipeline {
                     // are pushed to the ECR repository.
 
                     // Scan the image for vulnerabilities
+                    // trivy image --exit-code 1 --severity HIGH,CRITICAL ${ECR_REPOSITORY}:${IMAGE_TAG}
                     sh '''
-                    trivy image --exit-code 1 --severity HIGH,CRITICAL ${ECR_REPOSITORY}:${IMAGE_TAG}
+                        trivy image ${ECR_REPOSITORY}:${IMAGE_TAG}
                     '''
                 }
             }

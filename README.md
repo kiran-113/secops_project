@@ -63,4 +63,4 @@ npm install -D sonarqube-scanner
 https://www.npmjs.com/package/sonarqube-scanner
 
 
-# squ_21e59150561866105f0aaaf382f616e792cb9c5a  ---demo
+sonar webhook : http://jenkins-public-ip:jenkins_port_number/soanrqube-webhook/
