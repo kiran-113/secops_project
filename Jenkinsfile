@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SONAR_HOST_URL = 'http://35.95.110.234:9000/'
+        SONAR_HOST_URL = 'http://35.95.110.234:9000'
         SONAR_PROJECT_KEY = 'secops_project'
         SCANNER_HOME = tool 'SonarQubeScanner'  // Ensure this matches the tool name in Jenkins
         ECR_REPOSITORY = 'razorpay-ecr' // Your ECR repository name
