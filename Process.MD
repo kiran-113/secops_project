@@ -1,3 +1,4 @@
+Clone the repo and move to terraform folder
 1. Deploy Terraform resources
 2. you will get 2 outputs 1 for sonarqube and another for jenkins
 3. and you will notice JENKINS secreat key at terminal ( where you run terraform apply command)
