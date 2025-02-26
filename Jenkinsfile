@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        SONAR_HOST_URL = 'http://http://35.91.47.158:9000'
-        SONAR_PROJECT_KEY = 'secops_project'
+        SONAR_HOST_URL = 'http://http://35.91.47.158:9000' // update with your SonarQube server URL
+        SONAR_PROJECT_KEY = 'secops_project' // update with your SonarQube project key
         SCANNER_HOME = tool 'SonarQubeScanner'  // Ensure this matches the tool name in Jenkins
         ECR_REPOSITORY = 'razorpay-ecr' // Your ECR repository name
         AWS_REGION = 'us-west-2' // Specify your AWS region
